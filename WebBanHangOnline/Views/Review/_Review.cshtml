@@ -1,0 +1,49 @@
+﻿@model WebBanHangOnline.Models.EF.ReviewProduct
+
+<div class="add_review">
+    @using (Ajax.BeginForm("PostReview", "Review", new AjaxOptions
+    {
+        HttpMethod = "POST",
+        UpdateTargetId = "load_review",
+        OnSuccess = "OnSuccessRE",
+        OnFailure = "OnFailureRE",
+        OnBegin = "OnBeginRE"
+
+    }, new { @Id = "review_form" }))
+    {
+        <script>
+            function OnBeginRE() {
+                $('#btnCheckOut').attr("disabled", "disabled");
+                $('#load_send').html('<h2>Đang gửi....</h2>');
+            }
+            function OnSuccessCO(res) {
+                if (res.Success) {
+                    $("review_form")[0].reset();
+                }
+            }
+        </script>
+        @Html.AntiForgeryToken()
+        <div>
+            <h1>Add Review</h1>
+            @Html.TextBoxFor(x => x.FullName, new { @class = "form_input input_name", @placeholder = "Name", @id = "review_name" })
+            @Html.TextBoxFor(x => x.Email, new { @class = "form_input input_email", @placeholder = "Email", @id = "review_email" })
+            @Html.HiddenFor(x => x.UserName)
+            @Html.HiddenFor(x => x.ProductId, new { @value = ViewBag.ProductId })
+            <input type="text" id="txtRate" name="Rate" style="visibility:hidden;" />
+        </div>
+        <div>
+            <h1>Your Rating:</h1>
+            <ul class="user_star_rating">
+                <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+            </ul>
+            @Html.TextAreaFor(x => x.Content, new { @class = "input_review", @rows = "4", @placeholder = "Your Review" })
+            <div class="text-left text-sm-right">
+                <button id="review_submit" type="submit" class="red_button review_submit_btn trans_300" value="Submit">submit</button>
+            </div>
+        </div>
+    }
+</div>

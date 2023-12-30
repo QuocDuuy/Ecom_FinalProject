@@ -48,7 +48,7 @@
   <ItemGroup>
     <Reference Include="CKFinder, Version=2.4.0.2631, Culture=neutral, PublicKeyToken=579e7adc719a1423, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\ckfinder\bin\Release\CKFinder.dll</HintPath>
+      <HintPath>..\..\ckfinder\bin\Release\CKFinder.dll</HintPath>
     </Reference>
     <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Dapper.2.1.24\lib\net461\Dapper.dll</HintPath>
@@ -204,6 +204,7 @@
     <Compile Include="Controllers\MenuController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\ReviewController.cs" />
     <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -215,6 +216,14 @@
     <Compile Include="Migrations\202312260237015_insertCustomerid.cs" />
     <Compile Include="Migrations\202312260237015_insertCustomerid.designer.cs">
       <DependentUpon>202312260237015_insertCustomerid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312290748177_tableReview.cs" />
+    <Compile Include="Migrations\202312290748177_tableReview.designer.cs">
+      <DependentUpon>202312290748177_tableReview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312290810111_update_tableReview.cs" />
+    <Compile Include="Migrations\202312290810111_update_tableReview.designer.cs">
+      <DependentUpon>202312290810111_update_tableReview.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -232,6 +241,7 @@
     <Compile Include="Models\EF\Product.cs" />
     <Compile Include="Models\EF\ProductCategory.cs" />
     <Compile Include="Models\EF\ProductImage.cs" />
+    <Compile Include="Models\EF\ReviewProduct.cs" />
     <Compile Include="Models\EF\Subscribe.cs" />
     <Compile Include="Models\EF\SystemSetting.cs" />
     <Compile Include="Models\EF\ThongKe.cs" />
@@ -3579,6 +3589,8 @@
     <Content Include="Views\ShoppingCart\FailureView.cshtml" />
     <Content Include="Views\Account\Profile.cshtml" />
     <Content Include="Views\Products\Search.cshtml" />
+    <Content Include="Views\Review\_Review.cshtml" />
+    <Content Include="Views\Review\_Load_Review.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -3622,6 +3634,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202312260237015_insertCustomerid.resx">
       <DependentUpon>202312260237015_insertCustomerid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312290748177_tableReview.resx">
+      <DependentUpon>202312290748177_tableReview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312290810111_update_tableReview.resx">
+      <DependentUpon>202312290810111_update_tableReview.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
