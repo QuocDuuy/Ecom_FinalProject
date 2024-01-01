@@ -45,9 +45,10 @@ namespace WebBanHangOnline.Controllers
         public ActionResult _Load_Review(int productId)
         {
             var item = _db.Reviews.Where(x => x.ProductId == productId).OrderByDescending(x => x.Id).ToList();
-            ViewBag.Count = item.Count();
+            ViewBag.Count = item.Count;
             return PartialView();
         }
+
 
 
         [AllowAnonymous]

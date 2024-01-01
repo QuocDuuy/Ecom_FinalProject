@@ -141,53 +141,7 @@
                             <!-- User Reviews -->
 
                             <div class="col-lg-6 reviews_col">
-                                <div class="tab_title reviews_title">
-                                    <h4>Reviews (2)</h4>
-                                </div>
-
-                                <!-- User Review -->
-
-                                <div class="user_review_container d-flex flex-column flex-sm-row">
-                                    <div class="user">
-                                        <div class="user_pic"></div>
-                                        <div class="user_rating">
-                                            <ul class="star_rating">
-                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="review">
-                                        <div class="review_date">27 Aug 2016</div>
-                                        <div class="user_name">Brandon William</div>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    </div>
-                                </div>
-
-                                <!-- User Review -->
-
-                                <div class="user_review_container d-flex flex-column flex-sm-row">
-                                    <div class="user">
-                                        <div class="user_pic"></div>
-                                        <div class="user_rating">
-                                            <ul class="star_rating">
-                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="review">
-                                        <div class="review_date">27 Aug 2016</div>
-                                        <div class="user_name">Brandon William</div>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    </div>
-                                </div>
+                                @Html.Action("_Load_Review", "Review", new { productId = Model.Id })
                             </div>
 
                             <!-- Add Review -->
