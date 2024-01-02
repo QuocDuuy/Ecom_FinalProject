@@ -225,6 +225,10 @@
     <Compile Include="Migrations\202312290810111_update_tableReview.designer.cs">
       <DependentUpon>202312290810111_update_tableReview.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202401011218597_update_id_review.cs" />
+    <Compile Include="Migrations\202401011218597_update_id_review.designer.cs">
+      <DependentUpon>202401011218597_update_id_review.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CommonAbstract.cs" />
@@ -3640,6 +3644,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202312290810111_update_tableReview.resx">
       <DependentUpon>202312290810111_update_tableReview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202401011218597_update_id_review.resx">
+      <DependentUpon>202401011218597_update_id_review.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

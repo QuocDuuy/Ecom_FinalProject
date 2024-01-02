@@ -42,13 +42,27 @@ namespace WebBanHangOnline.Controllers
         }
 
         [AllowAnonymous]
+        /*        public ActionResult _Load_Review(int productId)
+                {
+                    var item = _db.Reviews.Where(x => x.ProductId == productId).OrderByDescending(x => x.Id).ToList();
+                    ViewBag.Count = item.Count;
+                    return PartialView();
+                }*/
         public ActionResult _Load_Review(int productId)
         {
-            var item = _db.Reviews.Where(x => x.ProductId == productId).OrderByDescending(x => x.Id).ToList();
-            ViewBag.Count = item.Count;
-            return PartialView();
-        }
+            // Assuming Review has an Id property which is an int
+            var item = _db.Reviews
+                           .Where(x => x.ProductId == productId)
+                           .OrderByDescending(x => x.Id)
+                           .ToList();
 
+            // Assuming you are trying to get the count of reviews and assign it to ViewBag.Count
+            ViewBag.Count = item.Count;
+
+            // It seems like you are returning a PartialView without passing the data to it
+            // You may want to pass the 'item' to the PartialView like this:
+            return PartialView(item);
+        }
 
 
         [AllowAnonymous]
